@@ -1,8 +1,8 @@
 function gerarGrafo() {
-  var numNos = 45;
+  var numNos = parseInt(document.getElementById('nos').value);
   var nos = new vis.DataSet();
   var arestas = new vis.DataSet();
-  for (var i = 1; i <= numNos; i++) {
+  for (var i = 0; i <= numNos; i++) {
     nos.add({id: i, label: 'Nos ' + i});
     if (i > 1) {
       var from = i;
@@ -11,7 +11,7 @@ function gerarGrafo() {
     }
   }
   // Adiciona arestas extras aleatórias que formam ciclos
-  for (var i = 1; i <= numNos; i++) {
+  for (var i = 0; i <= numNos; i++) {
     var from = i;
     var to = Math.floor(Math.random() * (numNos - 1)) + 1;
     if (to >= from) {

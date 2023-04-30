@@ -11,12 +11,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 </head>
-<body onload="gerarGrafo()">
+<body>
   <h1>Virality</h1>
   <div class="content">
     <div id="grafo"></div>
     <div class="text">
       <p>Para simular um virus, esse código foi gerado, insira as informações solicitadas para ver o resultado:</p>
+      <label for="nos">Quantidade de nós:
+        <select name="nos" id="nos">
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+          <option value="30">30</option>
+          <option value="35">35</option>
+          <option value="40">40</option>
+        </select>
+      </label>
+      <button onclick="gerarGrafo()">Set</button>
     </div>
   </div>
   <script src="./main.js"></script>
