@@ -1,0 +1,31 @@
+body {
+  background-color: #131515;
+  text-align: center;
+  margin: 40px 40px;
+}
+
+h1{
+  font-family: 'Creepster', cursive;
+  font-size: 5rem;
+  text-align: center;
+  color: #42B4CA;
+  text-shadow: 0 0 10px #BFDE42,
+               0 0 10px #BFDE42,
+               0 0 10px #BFDE42,
+               0 0 20px #42B4CA,
+               0 0 30px #42B4CA;
+  padding-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  gap: 50px;
+  color: #fffafb;
+}
+
+#grafo {
+  background-color: #2b2c28;
+  width: 45vw;
+  height: 70vh;
+  border: 1px solid #339989;
+}
