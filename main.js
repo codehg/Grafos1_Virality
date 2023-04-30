@@ -61,7 +61,7 @@ function gerarGrafo() {
     while (queue.length > 0) {
       var currentNodeId = queue.shift();
       var connectedNodes = network.getConnectedNodes(currentNodeId);
-      for (var i = 0; i < connectedNodes.length; i++) {
+      for (var i = 0; i <= connectedNodes.length; i++) {
           var node = nos.get(connectedNodes[i]);
           if (node.image !== imagem && !visited.has(connectedNodes[i]) && i === 0) {
               node.image = imagem;

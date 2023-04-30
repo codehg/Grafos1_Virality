@@ -37,10 +37,17 @@
       <button onclick="gerarGrafo()">Set</button>
       <p>Para obter uma melhor eficiência, Evil Morty progamou um algoritmo de Busca em Largura
         para saber qual o caminho mais curto entre qualquer cidadão e o Morty C-137, para que 
-        seu plano passasse despercebido.
+        ele não fosse facilmente ligado ao crime.
       </p>
+      <p>Ao clicar em um dos personagens é possível obter o caminho mais curto de infecção a partir
+        dele até chegar ao Morty Smith.
+      </p>
+      <audio id="musica" src="soundtrack/evilsong.mp3"></audio>
+      <button onclick="document.getElementById('musica').play()">Play</button>
+      <button onclick="document.getElementById('musica').pause()">Pause</button>
     </div>
   </div>
+  
   <script src="./main.js"></script>
 </body>
 </html>
