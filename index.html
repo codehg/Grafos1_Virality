@@ -16,9 +16,10 @@
   <div class="content">
     <div id="grafo"></div>
     <div class="text">
-      <p>Rick e Morty chegaram em um pequeno planeta para evitar um golpe de estado planejado
-        pelo Evil Morty. Seu plano era epalhar um vírus de controle mental para que os cidadãos
-        agissem de acordo com sua vontade.</p>
+      <p>Rick e Morty chegaram a um pequeno planeta para evitar um golpe de estado planejado
+        pelo Evil Morty. Seu plano é espalhar um vírus de controle mental para que os cidadãos
+        ajam de acordo com sua vontade. O alvo principal é o Morty Smith, pois é o único ser
+        nessa galáxia que pode impedir seu plano maligno.</p>
       <label for="nos">A população total do planeta é:
         <select name="nos" id="nos">
           <option value="10">10</option>
@@ -34,17 +35,19 @@
           <option value="100">100</option>
         </select>
       </label>
-      <button onclick="gerarGrafo()">Set</button>
-      <p>Para obter uma melhor eficiência, Evil Morty progamou um algoritmo de Busca em Largura
-        para saber qual o caminho mais curto entre qualquer cidadão e o Morty C-137, para que 
-        ele não fosse facilmente ligado ao crime.
+      <button onclick="gerarGrafoCiclico()">SetCiclico</button>
+      <button onclick="gerarGrafoAciclico()">SetAciclico</button>
+      <p>A fim de obter uma melhor eficiência, Evil Morty progamou um algoritmo de Busca em Largura
+        para calcular um caminho entre qualquer cidadão e o Morty, de
+        modo que o distanciasse da cena do crime para que ele não fosse facilmente ligado ao feito.
       </p>
-      <p>Ao clicar em um dos personagens é possível obter o caminho mais curto de infecção a partir
+      <p>Ao clicar em um dos personagens é possível obter o caminho de infecção a partir
         dele até chegar ao Morty Smith.
       </p>
       <audio id="musica" src="soundtrack/evilsong.mp3"></audio>
-      <button onclick="document.getElementById('musica').play()">Play</button>
-      <button onclick="document.getElementById('musica').pause()">Pause</button>
+      <audio id="musicaCurta" src="soundtrack/evilsongshort.mp3"></audio>
+      <button onclick="document.getElementById('musica').play()">Play Music</button>
+      <button onclick="document.getElementById('musica' && 'musicaCurta').pause()">Pause Music</button>
     </div>
   </div>
   

@@ -14,7 +14,7 @@ for (var i = 1; i <= 101; i++) {
     .catch(error => console.error(error));
 }
 
-function gerarGrafo() {
+function gerarGrafoCiclico() {
   var numNos = parseInt(document.getElementById('nos').value);
   var nos = new vis.DataSet();
   var arestas = new vis.DataSet();
@@ -74,6 +74,85 @@ function gerarGrafo() {
           }
       }
       console.log('No visitado na iteração', iteracao, ':', nos.get(currentNodeId).label);
+      document.getElementById('musicaCurta').play()
+      iteracao++;
+    }
+    alert("Só pode haver um!");
+  }
+
+  var data = {
+    nodes: nos, 
+    edges: arestas
+  };
+  var options = {
+    layout: {
+      hierarchical: false
+    },
+    edges: {
+      arrows: { to: true, from: false },
+      color: '#ffffff'
+    },
+    physics: {
+      enabled: false
+    }
+  };
+
+  var container = document.getElementById('grafo');
+  var network = new vis.Network(container, data, options);
+  network.on("selectNode", onSelectNode);
+}
+
+function gerarGrafoAciclico() {
+  var numNos = parseInt(document.getElementById('nos').value);
+  var nos = new vis.DataSet();
+  var arestas = new vis.DataSet();
+  for (var i = 1; i <= numNos; i++) {
+      nos.add({id: i, shape: 'circularImage', image: pegaImagem[i], label: pega[i]});
+      console.log('Grafo gerado', 'Id:', i, 'pega', pega[i])
+      if (i > 1) {
+        var from = i;
+        var to = Math.floor(Math.random() * (i - 1)) + 1;
+        arestas.add({from: from, to: to});
+      }
+  }
+
+  var infectado = 0;
+  var infectadoNode;
+  function onSelectNode(event) {
+    var nodeId = event.nodes[0];
+    var node = nos.get(nodeId);
+    if(infectado === 0){
+        node.image = imagem;
+        nos.update(node);
+        infectadoNode = node;
+        infectado = 1;
+        bfs(nodeId);
+    }
+  }
+
+
+  function bfs(nodeId) {
+    var queue = [nodeId];
+    var visited = new Set();
+    visited.add(nodeId);
+    var iteracao = 0;
+    while (queue.length > 0) {
+      var currentNodeId = queue.shift();
+      var connectedNodes = network.getConnectedNodes(currentNodeId);
+      for (var i = 0; i <= connectedNodes.length; i++) {
+          var node = nos.get(connectedNodes[i]);
+          if (nos.get(currentNodeId).label == 'Morty Smith') {
+              break;
+          }
+          else if (node.image !== imagem && !visited.has(connectedNodes[i]) && i === 0) {
+              node.image = imagem;
+              nos.update(node);
+              visited.add(connectedNodes[i]);
+              queue.push(connectedNodes[i]);
+          }
+      }
+      console.log('No visitado na iteração', iteracao, ':', nos.get(currentNodeId).label);
+      document.getElementById('musicaCurta').play()
       iteracao++;
     }
   }
