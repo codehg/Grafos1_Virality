@@ -44,7 +44,7 @@ Também é possível executar diretamente em seu navegador (caso tenha o projeto
 Se quiser ouvir a música temática enquanto testa é só dar o Play Music.
 
 ## Video da Apresentação
-<iframe width="560" height="315" src="https://www.youtube.com/embed/k90nbg3NDTk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[<img src="https://img.youtube.com/vi/k90nbg3NDTk/maxresdefault.jpg">](https://youtu.be/k90nbg3NDTk)
 
 [Link do Vídeo](https://www.youtube.com/watch?v=k90nbg3NDTk)
 
