@@ -57,21 +57,24 @@ function gerarGrafo() {
     var queue = [nodeId];
     var visited = new Set();
     visited.add(nodeId);
-    var iteration = 0;
+    var iteracao = 0;
     while (queue.length > 0) {
       var currentNodeId = queue.shift();
       var connectedNodes = network.getConnectedNodes(currentNodeId);
       for (var i = 0; i <= connectedNodes.length; i++) {
           var node = nos.get(connectedNodes[i]);
-          if (node.image !== imagem && !visited.has(connectedNodes[i]) && i === 0) {
+          if (nos.get(currentNodeId).label == 'Morty Smith') {
+              break;
+          }
+          else if (node.image !== imagem && !visited.has(connectedNodes[i]) && i === 0) {
               node.image = imagem;
               nos.update(node);
               visited.add(connectedNodes[i]);
               queue.push(connectedNodes[i]);
           }
       }
-      console.log('Node visitado na iteração', iteration + 1, ':', nos.get(currentNodeId).label);
-      iteration++;
+      console.log('No visitado na iteração', iteracao, ':', nos.get(currentNodeId).label);
+      iteracao++;
     }
   }
 
